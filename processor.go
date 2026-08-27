@@ -23,10 +23,10 @@ func ProcessStatistics(data []byte) (int, int, int) {
 
 	stringData := string(data)
 	words := strings.Fields(stringData)
-	ByteCount := len(words)
+	WordCounts := len(words)
 	NewLineCount := bytes.Count(data, []byte("\n"))
 
-	return NewLineCount, ByteCount, ByteCounts
+	return NewLineCount, WordCounts, ByteCounts
 }
 
 func ProcessReader(r io.Reader) ([]byte, error) {

@@ -19,7 +19,7 @@ func (r WcResult) FormatResults(opt Options) string {
 		result += fmt.Sprintf("%d ", r.NewLineCount)
 	}
 	if opt.Words {
-		result += fmt.Sprintf("%d ", r.ByteCounts)
+		result += fmt.Sprintf("%d ", r.WordCounts)
 	}
 
 	if opt.Bytes {
@@ -34,5 +34,5 @@ func (r WcResult) FormatResults(opt Options) string {
 }
 
 func (wr *WcResult) PackStats(data []byte) {
-	wr.NewLineCount, wr.ByteCounts, wr.ByteCounts = ProcessStatistics(data)
+	wr.NewLineCount, wr.WordCounts, wr.ByteCounts = ProcessStatistics(data)
 }
